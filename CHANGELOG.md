@@ -2,6 +2,24 @@
 
 All notable changes to Sevika Medical Store Desktop App will be documented in this file.
 
+## [1.0.1] - 2026-02-14
+
+### Security
+- **DevTools fully disabled in production builds** - Enhanced security by preventing code inspection
+- **Keyboard shortcuts blocked** - F12, Ctrl+Shift+I, Ctrl+Shift+J, and developer shortcuts now blocked in production
+- DevTools remain available in development mode for debugging
+
+### Fixed
+- Version number display updated to 1.0.1 in login and signup screens
+- Production build security hardening
+
+### Technical
+- Updated `electron/main.js` to conditionally enable DevTools based on build mode
+- Added keyboard event interceptors for production builds
+- No functional changes - all v1.0.0 features remain intact
+
+---
+
 ## [1.0.0] - 2026-02-12
 
 ### Added
