@@ -2,6 +2,26 @@
 
 All notable changes to Sevika Medical Store Desktop App will be documented in this file.
 
+## [1.0.2] - 2026-02-25
+
+### Added
+- **Medicine Type Filter** - Filter bar on Medicine Master screen with pill buttons per type (TABLET, CAPSULE, SYRUP, INJECTION, etc.)
+- Type filter works across all modes: browsing, quick search, and advanced search
+
+### Improved
+- **Bonus Scheme — Proportional Calculation** - Bonus quantity now calculated proportionally (e.g. scheme `9+1` on qty `4` → `0.4` free, `3.6` paid) instead of requiring complete sets
+- Proportional bonus applies consistently in both POS and Receive Order screens
+- Added validation: both parts of a bonus scheme must be > 0
+- Quick search now correctly applies Status and Type filters simultaneously
+- Advanced search unified with Status + Type filters in a single request
+
+### Security
+- **DevTools fully disabled in production builds** - Enhanced protection against code inspection
+- **Keyboard shortcuts blocked** - F12, Ctrl+Shift+I, Ctrl+Shift+J blocked in production
+- Production-only enforcement — DevTools remain available in development mode
+
+---
+
 ## [1.0.1] - 2026-02-14
 
 ### Security
