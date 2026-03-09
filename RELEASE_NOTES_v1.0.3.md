@@ -3,53 +3,60 @@
 **Release Date:** March 10, 2026  
 **Type:** Feature & Fixes Release
 
-## 🚀 Feature & Fixes Release
+## 🚀 Supplier & POS Overhaul Release
 
-Major POS improvements, supplier enhancements, and inventory accuracy fixes for Sevika Medical Store Desktop Application.
+Major improvements to the Supplier module, Point of Sale, and inventory accuracy.
 
 ## ✨ New Features
 
-### 1. **Multi-Bill POS (Parallel Customer Billing)**
-- Handle up to **5 customer bills simultaneously** without losing cart state
-- Tabbed bill interface — click to switch between bills instantly
-- Each bill tab shows the running total and customer name at a glance
-- Open new bills with the **＋ New Bill** button; close any bill with the × button
-- Bill sessions persist across screen navigation within the same login session
-- All bills are cleared automatically on logout
+### 1. **Multi-Bill POS — Serve Multiple Customers at Once**
+- POS now supports up to **5 simultaneous bills** — serve multiple customers without losing any cart
+- A bill tab bar above the search shows each bill with item count and running total
+- Switch between bills instantly; each bill has its own cart, customer, and payment method
+- Switching to another screen (e.g. Inventory) and coming back no longer clears the active bill
+- All bills are cleared automatically on logout and app restart
 
-### 2. **Supplier Drug License**
-- Add and store a **Drug License Number** for each supplier in the Supplier Detail screen
-- Displayed alongside existing supplier information for quick reference during purchase orders
+### 2. **Supplier Drug License Number**
+- Drug License Number field added to the Add Supplier form
+- Stored and displayed on the Supplier detail screen for quick reference during purchase orders
 
-### 3. **Edit & Delete Orders**
-- Edit existing purchase orders directly from the Receive Order screen
-- Delete orders that are no longer needed
-- Actions available inline — no need to navigate away
+### 3. **Edit & Delete Order Bills**
+- Edit button on each order bill to update the bill number, date, and notes
+- Delete button with safety checks — blocked if any payment has been made or stock has already been sold
+- The delete option only appears when it is actually safe to remove the order
+- Deleting an order automatically reverses any stock that was added from it
 
-### 4. **POS Catalogue Fallback**
-- When a medicine is **not found in inventory**, POS now automatically searches the Medicine Master catalogue
-- Results are shown with an **"Out of Stock ⚠️"** label so staff can identify what needs restocking
-- Helps cashiers inform customers and speed up reorder decisions
+### 4. **Medicine Not Found in POS — Catalogue Hint**
+- When a medicine has no stock in inventory, POS automatically searches the medicine catalogue
+- Shows a ⚠️ hint — *"Not available in stock — found in medicine catalogue"* — so staff know the medicine exists but hasn't been received yet
 
-## 🔧 Fixes
+## 🔧 Improvements & Fixes
 
-### **Inventory Stock Quantity**
-- Stock quantity in inventory now correctly reflects **real available stock** instead of always showing total purchased quantity
-- Prevents overbilling and stock discrepancy issues
+### **Manufacturer Visible in Order Bill**
+- Manufacturer name is now a dedicated column in the order items table
 
-### **Order Bill & Total Calculations**
-- Fixed calculation errors in received order bills and totals
-- Accurate invoicing is now reflected when receiving purchase orders
+### **Inventory Stock Correctly Shown After a Sale**
+- Fixed a bug where stock quantity was not updating after a sale was made
+- Stock levels now always reflect the actual quantity available for sale
 
-### **GST Default — Off**
-- GST is now **disabled by default** in POS; can be toggled on per transaction
-- Reduces friction for non-GST sales and avoids accidental GST charges
+### **Order Bill — Accurate Pricing**
+- Prices in order bills now show correctly with 2 decimal places (e.g. ₹12.50 instead of ₹13)
 
-## 💳 Subscription
+### **Order Bill — Correct Item Count**
+- The item count in the order bill header now shows the correct number of items instead of 0
 
-### **Razorpay Payment Subscription Renewal**
-- Subscription renewal is now available directly from **Settings → Subscription**
-- Integrated Razorpay payment flow for seamless plan renewal within the app
+### **Order Bill — Accurate Payment Status**
+- Order status now correctly shows PENDING, PARTIAL, or PAID based on actual payments recorded
+
+### **GST Off by Default in POS**
+- GST toggle in POS now defaults to OFF — appropriate for retail (OTC) sales
+- Can still be enabled manually per bill when needed
+
+### **Receive Order — Add Item Button Repositioned**
+- Add Item button moved to a more convenient location for faster multi-item entry during wholesale receiving
+
+### **In-App Subscription Renewal**
+- Subscription can now be renewed directly from Settings → Subscription without leaving the app
 
 ## 📥 Download
 
@@ -84,15 +91,23 @@ Simply run the new installer — it will upgrade automatically while preserving 
 ## ✅ What's Unchanged
 
 All features from v1.0.2 remain fully functional:
-- ✅ Medicine Type Filter in Medicine Master
-- ✅ Bonus Scheme proportional calculation in POS and Receive Order
-- ✅ Combined filters (Status + Type) in quick and advanced search
-- ✅ DevTools disabled in production builds
+- ✅ Medicine type filters and combined search filters
+- ✅ Proportional bonus scheme calculations
 - ✅ Complete pharmacy management system
 - ✅ Patient & prescription tracking
+- ✅ Inventory management with HSN codes
 - ✅ Sales & billing with GST support
 - ✅ Staff management with role-based access
+- ✅ Admin dashboard with analytics
 
 ## 🐛 Known Issues
 
-None at this time.
+- SGST/CGST split billing (planned for v1.0.4)
+
+## 📞 Support
+
+- **Issues:** [GitHub Issues](https://github.com/sarvajeetsuman/sevika-desktop-releases/issues)
+- **Website:** [sevika.online](https://sevika.online)
+- **Email:** support@sevika.online
+- **Previous Version:** v1.0.2 — [Release Notes](RELEASE_NOTES_v1.0.2.md)
+- **Full Changelog:** [CHANGELOG.md](CHANGELOG.md)
