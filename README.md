@@ -14,11 +14,12 @@ Sevika Medical Store is a comprehensive pharmacy management system for Windows.
 
 ## 📦 Available Downloads
 
-### Version 1.0.2 (Latest) - February 25, 2026
-- **NSIS Installer** (73.09 MB) - Recommended for most users
-- **Portable Version** (72.86 MB) - No installation required
+### Version 1.0.3 (Latest) - March 10, 2026
+- **NSIS Installer** - Recommended for most users
+- **Portable Version** - No installation required
 
 ### Previous Versions
+- Version 1.0.2 - February 25, 2026
 - Version 1.0.1 - February 14, 2026
 - Version 1.0.0 - February 12, 2026
 

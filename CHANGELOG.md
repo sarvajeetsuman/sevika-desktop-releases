@@ -2,6 +2,28 @@
 
 All notable changes to Sevika Medical Store Desktop App will be documented in this file.
 
+## [1.0.3] - 2026-03-10
+
+### Added
+- **Multi-Bill POS** — Run up to 5 customer bills simultaneously with a tabbed interface; switch between bills without losing cart state; sessions persist across screen navigation
+- **Supplier Drug License** — Add and store Drug License number for each supplier in the Supplier Detail screen
+- **Edit & Delete Orders** — Accept, edit, and delete existing purchase orders directly from the Receive Order screen
+- **POS Catalogue Fallback** — When a medicine is not found in inventory, POS now searches the Medicine Master catalogue and shows results with an "Out of Stock" label so staff can identify and restock
+
+### Fixed
+- Inventory stock quantity now correctly reflects real available stock instead of always showing total purchased quantity
+- Order bill and total calculations fixed for accurate invoicing on received orders
+- GST is now disabled by default in POS (opt-in per transaction)
+
+### Technical
+- POSScreen refactored: all cart and customer state moved into `BillSession[]` array with per-bill isolation
+- `billCounter` useRef ensures bill labels (Bill 1, Bill 2, …) never repeat within a session even after closing tabs
+- On logout, all POS session data (`pos_bills`, `pos_active_bill`, `pos_gst`) is cleared from sessionStorage
+- Razorpay payment subscription renewal integrated in Settings / Subscription screen
+- CSP (Content Security Policy) updated to allow local API calls in development
+
+---
+
 ## [1.0.2] - 2026-02-25
 
 ### Added
