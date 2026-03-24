@@ -2,6 +2,23 @@
 
 All notable changes to Sevika Medical Store Desktop App will be documented in this file.
 
+## [1.0.4] - 2026-03-24
+
+### Added
+- **GSTR-1 Report** — Generate outward supplies report (B2B, B2C, HSN summary) for GST filing
+- **GSTR-2 Report** — Generate inward supplies / purchase register with ITC tracking across all supplier invoices
+- **Segregated Wholesale POS** — Dedicated wholesale billing mode separate from retail POS; each mode maintains independent bill sessions, pricing, and GST defaults
+- **Enhanced Supplier Return** — Per-batch return support with automatic credit note generation and real-time inventory adjustment on return submission
+
+### Fixed
+- Inventory stock quantities now correctly reflect FIFO batch-level deductions after sales, returns, and adjustments
+- Crash on opening Supplier Return screen with no prior purchase orders
+- GST rounding errors on multi-item bills with mixed tax slabs
+- Duplicate entries appearing in order bills after quick re-scan
+- Supplier name missing in return confirmation dialog
+
+---
+
 ## [1.0.3] - 2026-03-10
 
 ### Added
